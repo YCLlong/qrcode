@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jquery生成二维码示例</title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/qrcode.js"></script>
+		<script src="js/jquery.qrcode.js"></script>
+	</head>
+	<body>
+		<div id="code"></div>
+		
+		<script>
+			$(function(){
+				var QRcode = $('<div>');
+				QRcode.attr('id' ,"androidQR");  //为<div>添加属性id
+				QRcode.css('float' ,"right");  //这里演示如何进行css操作
+				QRcode.qrcode({
+				    width: 110,
+				    height:110,
+				    text: 'http://www.baidu.com'
+				});
+				$('#code').append(QRcode); //将二维码元素添append到页面上id为‘code’的元素上
+				
+			});
+		</script>
+	</body>
+</html>
